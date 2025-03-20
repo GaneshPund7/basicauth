@@ -12,7 +12,7 @@ async function getUser(req, res) {
 
 
 async function addUser(req, res) {
-    
+
     let { name, email, password } = req.body
     try {
         let getUser = await Users.findOne({ email });
