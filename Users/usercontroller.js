@@ -26,10 +26,10 @@ async function addUser(req, res) {
         let hash_Password = await bycrypt.hash(password, demoSalt);
 
         let addUser = await Users.create({ name, email, password: hash_Password });
-        return res.status(200).json(addUser);
+        return res.status(200).json({Data: addUser});
 
     } catch (error) {
-        return res.status(404).send(error.message);
+        return res.status(404).json({error:error.message, message:"Somthing went wrong"});
     }
 }
 module.exports = { getUser, addUser };

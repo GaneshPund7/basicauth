@@ -22,4 +22,4 @@ const verifyToken = (req, res, next) => {
     
 }
 
-module.exports = { generateJWTToken, verifyToken }
+module.exports = { generateJWTToken,  verifyToken }
